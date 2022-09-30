@@ -1,6 +1,7 @@
 package com.remember.core.services;
 
 import com.remember.core.auth.RememberUserDetails;
+import com.remember.core.domains.Question;
 import com.remember.core.repositories.QuestionRepository;
 import com.remember.core.requests.QuestionRequest;
 import com.remember.core.responses.QuestionResponse;
@@ -16,12 +17,12 @@ import org.springframework.stereotype.Service;
 public class QuestionService {
     private final QuestionRepository questionRepository;
 
-    public Page<QuestionResponse> findAllByMe(RememberUserDetails userDetail,
-                                              Pageable pageable,
-                                              QuestionRequest params) {
+    public Page<Question> findAllByMe(RememberUserDetails userDetail,
+                                      Pageable pageable,
+                                      QuestionRequest params) {
 
 //        return questionRepository.findAllByUserId(1L, pageable, params)
 //                .map(QuestionResponse::ofMe);
-        return questionRepository.findAll(pageable).map(QuestionResponse::ofMe);
+        return questionRepository.findAll(pageable);
     }
 }

@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 @Component
 @RequiredArgsConstructor
-public class Initalizer {
+public class DevDatabaseInitalizer {
     private final QuestionRepository questionRepository;
 
     @PostConstruct
