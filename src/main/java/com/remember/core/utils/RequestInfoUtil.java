@@ -1,17 +1,19 @@
 package com.remember.core.utils;
 
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-public class ServletContextUtil {
-    public static String currentContext() {
+@Component
+public class RequestInfoUtil {
+    public String currentRoot() {
         return ServletUriComponentsBuilder.fromCurrentContextPath().toUriString();
     }
 
-    public static String currentRequestUriContext() {
+    public String currentRequestUri() {
         return ServletUriComponentsBuilder.fromCurrentRequestUri().toUriString();
     }
 
-    public static String currentRequestContext() {
+    public String currentRequest() {
         return ServletUriComponentsBuilder.fromCurrentRequest().toUriString();
     }
 }
